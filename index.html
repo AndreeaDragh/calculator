@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <form>
+        Valoare 1: <input type="text" id="val1"> <br>
+        Valoare 2: <input type="text" id="val2"> <br>
+        Operator: 
+        <select id="operator">
+            <option value="add">+</option>
+            <option value="min">-</option>
+            <option value="div">/</option>
+            <option value="mul">*</option>
+        </select>
+        <button type="button" onclick="calc()">Calculeaza</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function calc() {
+            var a = parseInt(document.querySelector("#val1").value);
+            var b = parseInt(document.querySelector("#val2").value);
+            var o = document.querySelector("#operator").value;
+            var calculate;
+
+            if(o == "add") {
+                calculate = a + b;
+            } else if (o == "min"){
+                calculate = a - b;
+            } else if (o == "div") {
+                calculate = a / b;
+            } else if (o == "mul") {
+                calculate = a * b;
+            }
+            document.querySelector("#result").innerHTML = calculate;
+        }
+    </script>
+</body>
+</html>
